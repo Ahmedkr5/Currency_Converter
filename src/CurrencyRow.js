@@ -4,14 +4,17 @@ import Select from '@mui/material/Select';
 export default function CurrencyRow(props) {
 const {
     currencyOptions,
-    selectedCurrency
+    selectedCurrency,
+    onChangeCurrency,
+    amount,
+    onChangeAmount
 }=props
 
 
     return (
         <div>
-           <input type='number' className="input" />
-           <select value={selectedCurrency}>
+           <input type='number' className="input"  value={amount} onChange={onChangeAmount}/>
+           <select value={selectedCurrency} onChange={onChangeCurrency}>
                {currencyOptions.map(option =>(<option key={option} value={option}>{option}</option>))}
                
            </select>
