@@ -1,9 +1,20 @@
 import React from 'react'
+import Select from '@mui/material/Select';
 
-export default function CurrencyRow() {
+export default function CurrencyRow(props) {
+const {
+    currencyOptions,
+    selectedCurrency
+}=props
+
+
     return (
         <div>
-          
+           <input type='number' className="input" />
+           <select value={selectedCurrency}>
+               {currencyOptions.map(option =>(<option key={option} value={option}>{option}</option>))}
+               
+           </select>
         </div>
     )
 }
